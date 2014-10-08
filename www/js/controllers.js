@@ -29,14 +29,23 @@ angular.module('ionic_showcase.controllers', [])
 	}
 })
 
-.controller('ScannerController', function($scope, ListSrv) {
+.controller('ScannerController', function($scope, Scanner) {
 	$scope.results = 0;
 	
 	$scope.scan = function() {
-		ListSrv.scan($scope).then(function(success){
-			$scope.results = success;
-		}, function(error){
+		// ListSrv.scan($scope).then(function(success){
+		// 	$scope.results = success;
+		// }, function(error){
 			
-		});
+		// });
+
+		Scanner.scan($scope).then(
+			function(success) {
+				$scope.results = success;
+			}, 
+			function(error) {
+				
+			}
+		);
 	}
 })
