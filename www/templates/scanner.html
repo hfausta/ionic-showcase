@@ -1,0 +1,15 @@
+<ion-view title="Ionic Showcase - Scanner">
+	<ion-content class="has-header">
+		<div class="row">
+			<div class="col col-center">
+				<h1 class="page-title">Ionic Scanner</h1>
+				<h3 class="page-subtitle">Scan Barcodes</h3>
+			</div>
+		</div>
+		<button id="startScan" class="button button-block button-positive" 
+			ng-click="scan()">
+        Scan
+    </button>
+    <div id="results" ng-bind="results" />
+	</ion-content>
+</ion-view>

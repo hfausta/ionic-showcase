@@ -1,0 +1,12 @@
+/* Empty. Add your own CSS if you like */
+.page-title {
+	color: #002060;
+}
+
+.page-subtitle {
+	color: #4285f4;
+}
+
+.page-title, .page-subtitle {
+	text-align: center;
+}
