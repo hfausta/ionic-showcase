@@ -25,7 +25,8 @@ angular.module('ionic_showcase', ['ionic',
 		.state('showcase', {
 			url: '/showcase',
 			abstract: true,
-			templateUrl: 'templates/menu.html'
+			templateUrl: 'templates/menu.html',
+			controller: 'MenuController'	
 		})
 		
 		.state('showcase.blank', {
@@ -82,6 +83,16 @@ angular.module('ionic_showcase', ['ionic',
 				'showcase-main' : {
 					templateUrl: 'templates/scanner.html',
 					controller: 'ScannerController'
+				}
+			}
+		})
+		
+		.state('showcase.list-add', {
+			url: '/list-add',
+			views: {
+				'showcase-main' : {
+					templateUrl: 'templates/listAdd.html',
+					controller: 'ListController'
 				}
 			}
 		})

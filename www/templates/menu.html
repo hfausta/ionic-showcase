@@ -9,6 +9,9 @@
 				<ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">
 					Back
 				</ion-nav-back-button>
+				<button class="button" ng-show="showAdd()" ng-click="openModal()")>
+					Add
+				</button>
 			</ion-nav-buttons>
 		</ion-nav-bar>
 		<ion-nav-view name="showcase-main" animation="slide-left-right">
@@ -35,6 +38,9 @@
 				</ion-item>
 				<ion-item nav-clear menu-close href="#/showcase/scanner">
 					Scanner
+				</ion-item>
+				<ion-item nav-clear menu-close href="#/showcase/list-add">
+					Add Items to List
 				</ion-item>
 			</ion-list>
 		</ion-content>

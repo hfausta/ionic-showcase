@@ -1,6 +1,6 @@
 <div class="modal">
-	<ion-header-bar>
-		<h1 class="title">Submission Status</h1>
+	<ion-header-bar class="bar-calm">
+		<h1 class="title">Add New Item</h1>
 		<div class="buttons">
 			<button class="button button-clear" ng-click="closeModal()">Close</button>
 		</div>
@@ -9,8 +9,27 @@
 		<div class="row">
 			<div class="col col-center">
 				<h1 class="page-title">Ionic Modal</h1>
-				<h3 class="page-subtitle">{{ message }}</h3>
+				<h3 class="page-subtitle">Add new item into the list</h3>
 			</div>
 		</div>
+		<form ng-submit="addItem(item)">
+			<div class="list">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">ID</span>
+					<input type="text" placeholder="0" ng-model="item.userId">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Name</span>
+					<input type="text" placeholder="Gin" ng-model="item.name">
+				</label>
+			</div>
+			<div class="row">
+				<div class="col col-center">
+					<button type="submit" class="button button-block button-positive">
+						Submit Form
+					</button>
+				</div>
+			</div>
+		</form>
 	</ion-content>
 </div>

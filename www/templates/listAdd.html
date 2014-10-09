@@ -1,0 +1,17 @@
+<ion-view title="Ionic Showcase - List">
+	<ion-content class="has-header">
+		<div class="row">
+			<div class="col col-center">
+				<h1 class="page-title">Ionic List</h1>
+				<h3 class="page-subtitle">Try adding item into the list using
+					the add button</h3>
+			</div>
+		</div>
+		<ion-list>
+			<ion-item ng-repeat="l in list" type="item-text-wrap"
+				href="#/showcase/list/{{ l.userId }}">
+				{{ l.name }}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
