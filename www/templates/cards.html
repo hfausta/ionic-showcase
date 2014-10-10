@@ -1,0 +1,31 @@
+<ion-view title="Ionic Showcase - Cards">
+	<ion-content class="has-header">
+		<div class="row">
+			<div class="col col-center">
+				<h1 class="page-title">Ionic Cards</h1>
+			</div>
+		</div>
+		<div class="list card">
+			<ion-item ng-repeat="l in list | orderBy: 'userId'" type="item-text-wrap"
+				href="#/showcase/list/{{ l.userId }}">
+				<div class="item item-avatar">
+					<h2>{{ l.name }}<h2>
+					<h4>User ID: {{ l.userId }}</h4>
+				</div>
+				<div class="item item-body">
+					{{ l.name }} is user number {{ l.userId }}
+				</div>
+				<div class="item tabs tabs-secondary tabs-icon-left">
+					<a class="tab-item">
+						<i class="icon ion-edit"></i>
+						Edit	
+					</a>
+					<a class="tab-item" ng-click="deleteItem(l)">
+						<i class="icon ion-close"></i>
+						Delete	
+					</a>
+				</div>
+			</ion-item>
+		</div>
+	</ion>
+</ion-view>

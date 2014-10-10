@@ -4,6 +4,10 @@ angular.module('ionic_showcase.controllers', [])
 	$ionicModal, $ionicPopup, List) {
 	$scope.showAdd = function() {
 		if($state.current.name === 'showcase.list-add') {
+			$scope.add = "Add Item";
+			return true;
+		} else if($state.current.name === 'showcase.cards') {
+			$scope.add = "Add Card";
 			return true;
 		} else {
 			return false;
@@ -20,6 +24,16 @@ angular.module('ionic_showcase.controllers', [])
 	})
 	
 	$scope.openModal = function() {
+		$scope.item = {}
+		
+		if($state.current.name === 'showcase.list-add') {
+			$scope.title = "Item";
+			$scope.type = "item";
+		} else {
+			$scope.title = "Card";
+			$scope.type = "card";
+		}
+		
 		$scope.modal.show();
 	}
 	
@@ -34,11 +48,29 @@ angular.module('ionic_showcase.controllers', [])
 			title: "Submission Status",
 			template: message
 		})
+		
+		$scope.modal.hide();
 	}
 })
 
-.controller('ListController', function($scope, List) {
+.controller('ListController', function($scope, $ionicPopup, List) {
 	$scope.list = List.all();
+	
+	$scope.deleteItem = function(item) {
+		$ionicPopup.confirm({
+			title: 'Delete Card',
+			template: 'Are you sure you want to remove user '+ item.name + ' ?'
+		}).then(function(res) {
+			if(res) {
+				message = List.remove(item.userId);
+				
+				$ionicPopup.alert({
+					title: "Deletion Status",
+					template: message
+				})	
+			}
+		})
+	}
 })
 
 .controller('ListDetailsController', function($scope, 
@@ -70,8 +102,4 @@ angular.module('ionic_showcase.controllers', [])
 			}
 		);
 	}
-})
-
-.controller('ListAddController', function($scope) {
-	
 })

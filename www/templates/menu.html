@@ -10,7 +10,7 @@
 					Back
 				</ion-nav-back-button>
 				<button class="button" ng-show="showAdd()" ng-click="openModal()")>
-					Add
+					{{ add }}
 				</button>
 			</ion-nav-buttons>
 		</ion-nav-bar>
@@ -24,23 +24,26 @@
 		</header>
 		<ion-content class="has-header">
 			<ion-list>
-				<ion-item nav-clear menu-close href="#/showcase/blank">
+				<ion-item nav-clear menu-close ui-sref-active="active" ui-sref="showcase.blank">
 					Blank
 				</ion-item>
-				<ion-item nav-clear menu-close href="#/showcase/tabs">
+				<ion-item nav-clear menu-close ui-sref-active="active" ui-sref="showcase.tab">
 					Tabs
 				</ion-item>
-				<ion-item nav-clear menu-close href="#/showcase/list">
+				<ion-item nav-clear menu-close ui-sref-active="active" ui-sref="showcase.list">
 					List
 				</ion-item>
-				<ion-item nav-clear menu-close href="#/showcase/form">
+				<ion-item nav-clear menu-close ui-sref-active="active" ui-sref="showcase.form">
 					Form
 				</ion-item>
-				<ion-item nav-clear menu-close href="#/showcase/scanner">
+				<ion-item nav-clear menu-close ui-sref-active="active" ui-sref="showcase.scanner">
 					Scanner
 				</ion-item>
-				<ion-item nav-clear menu-close href="#/showcase/list-add">
+				<ion-item nav-clear menu-close ui-sref-active="active" ui-sref="showcase.list-add">
 					Add Items to List
+				</ion-item>
+				<ion-item nav-clear menu-close ui-sref-active="active" ui-sref="showcase.cards">
+					Cards
 				</ion-item>
 			</ion-list>
 		</ion-content>

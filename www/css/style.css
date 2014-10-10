@@ -10,3 +10,27 @@
 .page-title, .page-subtitle {
 	text-align: center;
 }
+
+#main-page .scroll {
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+
+#main-page .scroll header {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.card {
+	margin-top: 0;
+}
+
+.card .item-content {
+	padding: 16px;	
+}
+
+.menu .item.active, .item-complex.active .item-content {
+	background-color: #4a87ee !important;
+	color: #FFF;
+}

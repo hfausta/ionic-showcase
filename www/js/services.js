@@ -1,23 +1,5 @@
 angular.module('ionic_showcase.services', [])
 
-// .service('ListSrv',function($q) {
-// 	this.scan = function(){
-// 		var deferred = $q.defer();
-		
-// 		cordova.plugins.barcodeScanner.scan(
-// 			function(result) {
-// 				deferred.resolve(JSON.stringify(result));	
-// 			},
-// 			function(error) {
-// 				alert("Scanning failed: " + error);
-// 				deferred.reject();
-// 			}
-// 		);
-// 		return deferred.promise;
-// 	};
-// })
-
-
 .factory('List', function() {
 	var list = [
 		{ userId: 0, name: 'Henry'},
@@ -46,6 +28,16 @@ angular.module('ionic_showcase.services', [])
 			}
 			
 			return "Insert Success - Check user list";
+		},
+		
+		remove: function(userId) {
+			for(var v in list) {
+				if(list[v].userId === parseInt(userId)) {
+					list.splice(v, 1);
+					
+					return "Successfully removed user";
+				}
+			}
 		}
 	}
 })

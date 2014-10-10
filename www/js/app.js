@@ -97,5 +97,15 @@ angular.module('ionic_showcase', ['ionic',
 			}
 		})
 		
+		.state('showcase.cards', {
+			url: '/cards',
+			views: {
+				'showcase-main' : {
+					templateUrl: 'templates/cards.html',
+					controller: 'ListController'
+				}
+			}
+		})
+		
 		$urlRouterProvider.otherwise('/showcase/blank');
 });
